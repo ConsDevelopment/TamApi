@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<label>Part Number</label>
+<input type="text" id="part-number" name="part-number" />
+
+<input type="submit" id="save-source" name="save-source" value="Add" />
+<script>
+	$('#save-source').click(function (e) {
+		e.preventDefault();
+		alert('test');
+		var source = {
+			'UserName': 'testing',
+			'FirstName': 'test',
+			'MiddleName': $('#part-number').val(),
+			//'VendorID': $('#Vendors').val()
+		}
+		$.ajax({
+			type: "POST",
+			url: "http://localhost:55377/api/Registration/RegistrationController",
+			data: JSON.stringify(source),
+			contentType: 'application/json; charset=utf-8',
+			dataType: 'json',
+			success: function (data) {
+				alert(data);
+			},
+			error: function (error) {
+				jsonValue = jQuery.parseJSON(error.responseText);
+				//jError('An error has occurred while saving the new part source: ' + jsonValue, { TimeShown: 3000 });
+			}
+		});
+	});
+</script>
