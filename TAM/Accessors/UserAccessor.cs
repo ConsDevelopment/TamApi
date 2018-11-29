@@ -7,13 +7,18 @@ using TAM.Utilities.NHibernate;
 
 namespace TAM.Accessors {
 	public class UserAccessor  {
-		public static void CreateUser(UserModel userModel) {
-			using (var s = HibernateSession.GetCurrentSession()) {
-				using (var tx = s.BeginTransaction()) {
-					s.Save(userModel);
-					tx.Commit();
-					s.Flush();
+		public static bool CreateUser(UserModel userModel) {
+			try {
+				using (var s = HibernateSession.GetCurrentSession()) {
+					using (var tx = s.BeginTransaction()) {
+						s.Save(userModel);
+						tx.Commit();
+						s.Flush();
+					}
 				}
+				return true;
+			}catch(Exception e) {
+				return false;
 			}
 		}
 	}

@@ -21,19 +21,33 @@ namespace TAM.Controllers {
 		}
 
 		// POST api/<controller>
-		public void Post(UserModel model) {
+		public bool Post(UserModel model) {
 			if (ModelState.IsValid) {
-				
+
 
 				var user = new UserModel() { UserName = model.Email.ToLower(),
-						FirstName = model.FirstName,
-						LastName = model.LastName,
-						BirthDate=model.BirthDate,
-						City=model.City,
-					ContactNumber=model.ContactNumber};
+					FirstName = model.FirstName,
+					LastName = model.LastName,
+					BirthDate = model.BirthDate,
+					City = model.City,
+					ContactNumber = model.ContactNumber,
+					Country = model.Country,
+					Province = model.Province,
+					PasswordHash=model.PasswordHash,
+					Gender=model.Gender,
+					License=model.License,
+					ImageGuid = model.ImageGuid,
+					LicenseExpiration = model.LicenseExpiration
+				};
+				if(	UserAccessor.CreateUser(user)) {
 
-				UserAccessor.CreateUser( user);
-			}
+					return true;
+				}else {
+					return false;
+				}
+			}else {
+					return false;
+				}
 			}
 
 		// PUT api/<controller>/5

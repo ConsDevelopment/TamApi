@@ -29,6 +29,8 @@ namespace TAM.Models {
 		public virtual string City { get; set; }
 		public virtual string Country { get; set; }
 		public virtual string ContactNumber { get; set; }
+		public virtual string License { get; set; }
+		public virtual DateTime? LicenseExpiration { get; set; }
 		//[NotMapped]
 		private string _ImageUrl { get; set; }
 
@@ -85,6 +87,8 @@ namespace TAM.Models {
 				Map(x => x.Gender);
 				Map(x => x.CreateTime);
 				Map(x => x.DisableTips);
+				Map(x => x.License);
+				Map(x => x.LicenseExpiration);
 				HasMany(x => x.Logins).Cascade.SaveUpdate();
 				HasMany(x => x.Roles).Cascade.SaveUpdate();
 				HasMany(x => x.Claims).Cascade.SaveUpdate();
