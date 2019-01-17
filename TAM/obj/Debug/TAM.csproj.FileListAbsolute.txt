@@ -143,6 +143,6 @@ D:\developer\TAM\TamApi\TAM\bin\Newtonsoft.Json.xml
 D:\developer\TAM\TamApi\TAM\bin\System.Net.Http.Formatting.xml
 D:\developer\TAM\TamApi\TAM\bin\System.Web.Http.xml
 D:\developer\TAM\TamApi\TAM\bin\System.Web.Http.WebHost.xml
-D:\developer\TAM\TamApi\TAM\obj\Debug\TAM.csprojResolveAssemblyReference.cache
 D:\developer\TAM\TamApi\TAM\obj\Debug\TAM.dll
 D:\developer\TAM\TamApi\TAM\obj\Debug\TAM.pdb
+D:\developer\TAM\TamApi\TAM\obj\Debug\TAM.csprojResolveAssemblyReference.cache
