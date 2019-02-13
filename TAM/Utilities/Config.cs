@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Web;
-using TAM.Models.Enums;
+using Tam.Models;
+using Tam.Models.Enums;
+using System.IO;
+using System.Threading;
+//using FireSharp.Config;
+using System.Collections.Specialized;
+using System.Configuration;
+using NHibernate;
 
-namespace TAM.Utilities {
+namespace Tam.Utilities {
 	public class Config {
 		public static void DbUpdateSuccessful() {
 			var env = GetEnv();
@@ -14,7 +19,7 @@ namespace TAM.Utilities {
 				return;
 
 			var version = GetAppSetting("dbVersion", "0");
-			var dir = Path.Combine(Path.GetTempPath(), "tam");
+			var dir = Path.Combine(Path.GetTempPath(), "Tam");
 
 			if (!Directory.Exists(dir)) {
 				Directory.CreateDirectory(dir);
@@ -34,7 +39,7 @@ namespace TAM.Utilities {
 			if (env != null && Enum.TryParse(env.ToLower(), out result)) {
 				return result;
 			}
-			return Env.local_mysql;
+			return Env.mssql;
 			//throw new Exception("Invalid Environment");
 		}
 		public static string GetAppSetting(string key, string deflt = null) {
@@ -43,10 +48,18 @@ namespace TAM.Utilities {
 		}
 		public static bool RunChromeExt() {
 			switch (GetEnv()) {
-				
-				case Env.local_mysql:
-					return GetAppSetting("RunExt", "false").ToBooleanJS();
-				
+				case Env.local_test_sqlite:
+					return true;
+				case Env.mssql:
+					return false;
+				case Env.test_server:
+					return false;
+				case Env.local_sqlite:
+					return false;
+				//case Env.local_mysql:
+				//	return GetAppSetting("RunExt", "false").ToBooleanJS();
+				case Env.production:
+					return false;
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
@@ -61,9 +74,24 @@ namespace TAM.Utilities {
 			switch (env) {
 				case Env.local_test_sqlite:
 					return true;
-				case Env.local_mysql:
-					goto case Env.local_sqlite;
-				case Env.local_sqlite: {
+			
+				case Env.mssql: {
+						var dir = Path.Combine(Path.GetTempPath(), "Tam");
+						var file = Path.Combine(dir, "dbversion" + env + ".txt");
+						if (!Directory.Exists(dir))
+							Directory.CreateDirectory(dir);
+						if (!File.Exists(file)) {
+							File.Create(file);
+							while (!File.Exists(file)) {
+								Thread.Sleep(100);
+							}
+							Thread.Sleep(100);
+						}
+						if (version == File.ReadAllText(file))
+							return false;
+						return true;
+					}
+				case Env.test_server: {
 						var dir = Path.Combine(Path.GetTempPath(), "Tam");
 						var file = Path.Combine(dir, "dbversion" + env + ".txt");
 						if (!Directory.Exists(dir))
@@ -85,5 +113,6 @@ namespace TAM.Utilities {
 					throw new ArgumentOutOfRangeException();
 			}
 		}
-	}
+
+	}	
 }

@@ -1,12 +1,20 @@
-﻿using NHibernate;
+﻿using System.Data;
+using System.Linq.Expressions;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using NHibernate.Engine;
+//using NHibernate.Envers;
+using NHibernate.Stat;
+using NHibernate.Type;
 using NHibernate.Transaction;
-using System.Data;
 
-namespace TAM.Utilities.NHibernate {
+namespace Tam.Utilities.NHibernate {
+
+
+
 	public class SingleRequestTransaction : ITransaction {
 
 		private ITransaction _backingTransaction;
@@ -78,13 +86,6 @@ namespace TAM.Utilities.NHibernate {
 				_backingTransaction.Dispose();
 			}
 		}
-
-		
-
-	
-
-		
-
 		public SingleRequestTransaction(ITransaction toWrap, SingleRequestSession request) {
 			_backingTransaction = toWrap;
 			_request = request;

@@ -1,24 +1,20 @@
-﻿using NHibernate;
-using NHibernate.Envers;
+﻿using System.Data;
+using System.Linq.Expressions;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using NHibernate.Engine;
+//using NHibernate.Envers;
 using NHibernate.Stat;
 using NHibernate.Type;
-using System.Data;
-using System.Linq.Expressions;
+using Tam.Utilities;
 using System.Threading.Tasks;
+//using FinancialSystem.Models.Synchronize;
 
-namespace TAM.Utilities.NHibernate {
-	public static class AuditReaderExtensions {
-		public static IAuditReader AuditReader(this ISession self) {
-			if (self is SingleRequestSession)
-				return ((SingleRequestSession)self).GetBackingSession().Auditer();
-			return self.Auditer();
-		}
-	}
+namespace Tam.Utilities.NHibernate {
+	
 
 
 	public class SingleRequestSession : ISession {
@@ -33,7 +29,7 @@ namespace TAM.Utilities.NHibernate {
 			public bool TransactionDisposed = false;
 
 			public Context(SingleRequestSession self) {
-				Depth = self._ContextStack.Count;
+				Depth = self._ContextStack.Count;		
 			}
 
 			public void InitTransaction(SingleRequestTransaction tx) {
@@ -80,9 +76,7 @@ namespace TAM.Utilities.NHibernate {
 			_ContextStack = new Stack<Context>();
 			_ContextStack.Push(new Context(this));
 		}
-		public IAuditReader Auditer() {
-			return GetBackingSession().Auditer();
-		}
+		
 
 		//[Untested("OnDisposedActions", "Rollback", "Exception", "NotCommitted", "OnlyOnCommit = false")]
 		public void Dispose() {
@@ -442,27 +436,6 @@ namespace TAM.Utilities.NHibernate {
 			return _backingSession.GetSession(entityMode);
 		}
 
-		
-		
-
-		IDbConnection ISession.Close() {
-			throw new NotImplementedException();
-		}
-
-		
-
-	
-
-	
-
-		
-
-		
-
-		ISessionImplementor ISession.GetSessionImplementation() {
-			throw new NotImplementedException();
-		}
-
 		public EntityMode ActiveEntityMode {
 			get { return _backingSession.ActiveEntityMode; }
 		}
@@ -504,18 +477,6 @@ namespace TAM.Utilities.NHibernate {
 
 		public ISessionStatistics Statistics {
 			get { return _backingSession.Statistics; }
-		}
-
-		IDbConnection ISession.Connection {
-			get {
-				throw new NotImplementedException();
-			}
-		}
-
-		ISessionStatistics ISession.Statistics {
-			get {
-				throw new NotImplementedException();
-			}
 		}
 
 		#endregion
