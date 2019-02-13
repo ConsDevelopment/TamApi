@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Tam.Hooks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
-using TAM.Hooks;
 
-namespace TAM.Utilities {
+namespace Tam.Utilities {
 	public static class AsyncHelper {
 		private static readonly TaskFactory _myTaskFactory = new
 		  TaskFactory(CancellationToken.None,
@@ -28,14 +28,14 @@ namespace TAM.Utilities {
 		public static TResult RunSync<TResult>(Func<Task<TResult>> func) {
 			var a = HookData.ToReadOnly();
 			return AsyncHelper._myTaskFactory
-			  .StartNew<Task<TResult>>((st) => {
-				  HookData.LoadFrom(a);
-				  ((State)st).Deconstruct();
-				  return func();
-			  }, new State())
-			  .Unwrap<TResult>()
-			  .GetAwaiter()
-			  .GetResult();
+		.StartNew<Task<TResult>>((st) => {
+			HookData.LoadFrom(a);
+			((State)st).Deconstruct();
+			return func();
+		}, new State())
+		.Unwrap<TResult>()
+		.GetAwaiter()
+		.GetResult();
 		}
 
 		public static void RunSync(Func<Task> func) {

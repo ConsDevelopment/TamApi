@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5D0C182-A859-4F0F-851D-4160109D6FF6}</ProjectGuid>
+    <ProjectGuid>{15F92DCE-80DE-40F1-8BAF-49C7B970FDF7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TAM.Tests</RootNamespace>
-    <AssemblyName>TAM.Tests</AssemblyName>
+    <RootNamespace>Tam.Tests</RootNamespace>
+    <AssemblyName>Tam.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -52,13 +52,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TAM\TAM.csproj">
-      <Project>{9717CF20-DF99-42F7-BCE5-407572665930}</Project>
-      <Name>TAM</Name>
+    <ProjectReference Include="..\Tam\Tam.csproj">
+      <Project>{DBABCFD7-630A-4CDC-9036-59EFC9C03D18}</Project>
+      <Name>Tam</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
