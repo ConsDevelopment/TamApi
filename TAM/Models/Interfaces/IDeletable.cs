@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
 
-namespace TAM.Models.Interfaces {
-	public interface IDeletable {
-		DateTime? DeleteTime { get; set; }
-	}
+namespace Tam.Models.Interfaces
+{
+    public interface IDeletable
+    {
+        DateTime? DeleteTime { get; set;}
+    }
 }

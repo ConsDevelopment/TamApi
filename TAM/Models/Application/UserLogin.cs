@@ -1,12 +1,31 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using FluentNHibernate.Mapping;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Tam.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using TAM.Models.Interfaces;
+using System.Text;
 
-namespace TAM.Models {
+namespace Tam.Models {
 	public class UserLogin : IdentityUserLogin, ILongIdentifiable {
-		public long Id { get; protected set; }
+		public virtual long Id { get; protected set; }
+
+		public UserLogin() {
+
+			CreateTime = DateTime.UtcNow;
+		}
+
+		public virtual DateTime CreateTime { get; set; }
+
+	}
+	public class UserLoginMap : ClassMap<UserLogin> {
+		public UserLoginMap() {
+			Id(x => x.Id);
+			Map(x => x.ProviderKey);
+			Map(x => x.LoginProvider);
+			Map(x => x.CreateTime);
+
+		}
 	}
 }
+

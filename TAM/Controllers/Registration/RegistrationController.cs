@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using TAM.Accessors;
-using TAM.Models;
-using TAM.Models.UserModels;
+using System.Web.Http.Cors;
+using Tam.Accessor.Registration;
+using Tam.Models;
 
-namespace TAM.Controllers {
+namespace Tam.Controllers {
+	[EnableCors(origins: "*", headers: "*", methods: "*")] // tune to your needs
 	public class RegistrationController : ApiController {
 		// GET api/<controller>
+		//[EnableCors(origins: "*", headers: "*", methods: "*")]
 		public IEnumerable<string> Get() {
 			return new string[] { "value1", "value2" };
 		}
@@ -21,34 +24,29 @@ namespace TAM.Controllers {
 		}
 
 		// POST api/<controller>
-		public bool Post(UserModel model) {
-			if (ModelState.IsValid) {
+		//[EnableCors(origins: "*", headers: "*", methods: "*")]
+		public bool Post(UserModel registor) {
+			bool result=false;
+			PasswordHasher ph = new PasswordHasher();
+			var passHash = ph.HashPassword(registor.PasswordHash);
+			UserModel user = new UserModel() {
+				UserName = registor.UserName,
+				PasswordHash = passHash,
+				LastName = registor.LastName,
+				FirstName = registor.FirstName,
+				SecurityStamp = Guid.NewGuid().ToString()
+			};
+			Registration reg = new Registration();
+			var isNotExists = reg.RegisterUser(user).Result;
 
-
-				var user = new UserModel() { UserName = model.Email.ToLower(),
-					FirstName = model.FirstName,
-					LastName = model.LastName,
-					BirthDate = model.BirthDate,
-					City = model.City,
-					ContactNumber = model.ContactNumber,
-					Country = model.Country,
-					Province = model.Province,
-					PasswordHash=model.PasswordHash,
-					Gender=model.Gender,
-					License=model.License,
-					ImageGuid = model.ImageGuid,
-					LicenseExpiration = model.LicenseExpiration
-				};
-				if(	UserAccessor.CreateUser(user)) {
-
-					return true;
-				}else {
-					return false;
-				}
-			}else {
-					return false;
-				}
+			if (isNotExists) {
+				result = true;
+			} else {
+				result = false;
 			}
+
+			return result;
+		}
 
 		// PUT api/<controller>/5
 		public void Put(int id, [FromBody]string value) {
