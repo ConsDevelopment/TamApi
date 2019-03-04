@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+</head>
+<body>
+	<div>
+		<input type="button" id="test" />
+
+	</div>
+	<script>
+		$('#test').click(function (e) {
+
+			e.preventDefault();
+
+			var source = {
+				"Username": "myusername23@del.com",
+				"PasswordHash": "test2",
+				"FirstName": "cons",
+				"LastName": "con"
+
+			};
+
+					alert('test begin');
+
+
+
+					//jQuery.support.cors = false;
+					$.ajax({
+
+						type: "POST",
+						//url: "http://localhost:63899/api/Registration",
+						//url: "http://localhost:63899/api/User",
+						//url: "http://cons:63899/api/User",
+						url: "http://192.168.88.25:9000/api/Registration",
+						data: JSON.stringify(source),
+						//data: "1",
+						contentType: 'application/json; charset=utf-8',
+
+						dataType: 'json',
+
+						success: function (data) {
+							alert("success");
+							alert(data);
+
+						},
+
+						error: function (error) {
+							alert(error);
+							jsonValue = jQuery.parseJSON(error.responseText);
+
+							//jError('An error has occurred while saving the new part source: ' + jsonValue, { TimeShown: 3000 });
+
+						}
+
+					});
+
+
+
+				});
+
+
+
+	</script>
+</body>
+</html>

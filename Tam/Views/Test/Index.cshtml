@@ -22,8 +22,10 @@
 			e.preventDefault();
 
 			var source = {
-				"FirstName": "myname",
-				"LastName": "manzono", "UserName": "myemail"
+
+				"Username": "myusername4@del.com",
+				"Password": "test2"
+
 			};
 
 					alert('test begin');
@@ -35,7 +37,9 @@
 
 						type: "POST",
 
-						url: "http://localhost:63899/api/User",
+						url: "http://localhost:63899/api/Login",
+						//url: "http://localhost:63899/api/User",
+
 						//url: "http://cons:63899/api/User",
 						//url: "http://192.168.88.25:9000/api/User",
 						data: JSON.stringify(source),

@@ -67,6 +67,19 @@ namespace Tam.NHibernate {
 			}
 		}
 
+		public async Task<UserModel> FindByNamePassAsync(string userName, string password) {
+			PasswordHasher ph = new PasswordHasher();
+			
+			var usr = await FindByNameAsync(userName);
+			var result =ph.VerifyHashedPassword(usr.PasswordHash, password);
+			if (result!=PasswordVerificationResult.Success)
+				usr=null;
+			return usr;
+		}
+
+	
+
+
 		public async Task UpdateAsync(UserModel user) {
 			using (var db = HibernateSession.GetCurrentSession()) {
 				using (var tx = db.BeginTransaction()) {
@@ -122,11 +135,21 @@ namespace Tam.NHibernate {
             }*/
 		}
 
+		public async Task SetPasswordAsync(UserModel user, string password) {
+			var usr = await FindByIdAsync(user.Id);
+			PasswordHasher ph = new PasswordHasher();
+			var passHash = ph.HashPassword(password);
+			await SetPasswordHashAsync(usr, passHash);
+		}
+
+
 		public async Task AddLoginAsync(UserModel user, UserLoginInfo login) {
 			using (var db = HibernateSession.GetCurrentSession()) {
 				using (var tx = db.BeginTransaction()) {
 					user = db.Get<UserModel>(user.Id);
-					user.Logins.Add(new IdentityUserLogin() {
+
+					user.Logins.Add(new UserLogin() {
+
 						LoginProvider = login.LoginProvider,
 						ProviderKey = login.ProviderKey,
 						// User = user,
@@ -270,7 +293,10 @@ namespace Tam.NHibernate {
                 }
             }*/
 		}
-			
+
+
+		
+
 	}
 }
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously

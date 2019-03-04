@@ -13,13 +13,18 @@ namespace Tam
     {
         public static void Register(HttpConfiguration config)
         {
-			// Web API configuration and services
 
+
+
+			// Web API configuration and services
+			config.EnableCors(); 
+			config.MapHttpAttributeRoutes();
 			// Web API routes
 			//Assembly.LoadFrom(Path.Combine(Environment.CurrentDirectory, "WebApiStrangeConsoleHostSample.dll"));
 			config.Formatters.JsonFormatter.SupportedMediaTypes
 			.Add(new MediaTypeHeaderValue("text/html"));
-			config.MapHttpAttributeRoutes();
+			
+
 
 			config.Routes.MapHttpRoute(	   
 				name: "DefaultApi",
