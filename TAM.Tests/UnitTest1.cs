@@ -3,7 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tam.Models;
 using Tam.Utilities;
 using Tam.TestClass;
+
 using Tam.NHibernate;
+
 
 namespace Tam.test {
 	[TestClass]
@@ -11,10 +13,10 @@ namespace Tam.test {
 		[TestMethod]
 		public void TestMethod1() {
 			TestCreateUser tc = new TestCreateUser();
+
 			//tc.PasswordTesting();
 			tc.createUser();
 		}
 		
-
 	}
 }

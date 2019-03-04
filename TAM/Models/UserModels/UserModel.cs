@@ -26,9 +26,11 @@ namespace Tam.Models {
 		public virtual DateTime? DeleteTime { get; set; }
 
 		public virtual bool IsAdmin { get; set; }
+
 		public virtual bool IsActive { get; set; }
 		public virtual IList<UserRoleModel> Roles { get; set; }
 		public virtual ICollection<UserLogin> Logins { get; set; }
+
 
 		public class UserModelMap : ClassMap<UserModel> {
 			public UserModelMap() {
@@ -42,9 +44,11 @@ namespace Tam.Models {
 				Map(x => x.DeleteTime);
 				Map(x => x.Gender);
 				Map(x => x.CreateTime);
+
 				Map(x => x.SecurityStamp);
 				Map(x => x.IsActive);
 				HasMany(x => x.Logins).Cascade.SaveUpdate();
+
 				HasMany(x => x.Roles).Cascade.SaveUpdate();
 			}
 		}

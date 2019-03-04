@@ -22,8 +22,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2014 01:34:42</publishTime>
     </File>
     <File Include="bin/FluentNHibernate.dll">
-      <publishTime>07/10/2015 00:34:24</publishTime>
-    </File>
+      <publishTime>07/10/2015 00:34:24</publishTime>   </File>
     <File Include="bin/Iesi.Collections.dll">
       <publishTime>10/27/2012 18:50:12</publishTime>
     </File>
@@ -55,8 +54,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/04/2015 17:07:22</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
-      <publishTime>03/04/2015 17:07:22</publishTime>
-    </File>
+      <publishTime>03/04/2015 17:07:22</publishTime>    </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/15/2015 02:06:24</publishTime>
     </File>
@@ -106,10 +104,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
+
       <publishTime>11/28/2018 13:00:36</publishTime>
     </File>
     <File Include="bin/System.Web.Cors.dll">
       <publishTime>11/28/2018 12:58:44</publishTime>
+
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>01/28/2015 04:04:30</publishTime>
@@ -145,7 +145,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="packages.config">
+
       <publishTime>02/22/2019 15:39:59</publishTime>
+
     </File>
     <File Include="scripts/ai.0.22.9-build00167.js">
       <publishTime>01/21/2019 16:08:20</publishTime>
@@ -157,6 +159,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/27/2019 16:20:26</publishTime>
     </File>
     <File Include="Views/Test/Index.cshtml">
+
       <publishTime>02/11/2019 11:51:37</publishTime>
     </File>
     <File Include="Views/Test/Registration.cshtml">
@@ -166,7 +169,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/21/2019 16:07:53</publishTime>
     </File>
     <File Include="Web.config">
+
       <publishTime>02/22/2019 15:55:52</publishTime>
+
     </File>
   </ItemGroup>
 </Project>

@@ -71,6 +71,7 @@ D:\developer\TAM\Tam_012719\Tam\obj\Debug\Tam.Properties.ExceptionStrings.resour
 D:\developer\TAM\Tam_012719\Tam\obj\Debug\Tam.csproj.GenerateResource.Cache
 D:\developer\TAM\Tam_012719\Tam\obj\Debug\Tam.dll
 D:\developer\TAM\Tam_012719\Tam\obj\Debug\Tam.pdb
+
 D:\developer\TAM\Tam\Tam\bin\ApplicationInsights.config
 D:\developer\TAM\Tam\Tam\bin\roslyn\csc.exe
 D:\developer\TAM\Tam\Tam\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll

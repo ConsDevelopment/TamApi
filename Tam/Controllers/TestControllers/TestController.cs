@@ -15,8 +15,10 @@ namespace Tam.Controllers.TestController
         {
             return View();
         }
+
 		public ActionResult Registration() {
 			return View();
 		}
 	}
+
 }

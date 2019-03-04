@@ -57,8 +57,7 @@
       <Name>Tam</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
+  <ItemGroup>    <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+
 using Tam.NHibernate;
 using Microsoft.AspNet.Identity;
+
 
 namespace Tam.TestClass {
 	public class TestCreateUser {
@@ -22,6 +24,7 @@ namespace Tam.TestClass {
 			var usr = new UserModel() {
 				FirstName = "cons",
 				LastName = "mname",
+
 				UserName = "myusername11@del.com"
 			};
 			CreateUser(usr);
@@ -33,5 +36,6 @@ namespace Tam.TestClass {
 		var usr = await store.FindByNameAsync("myusername4@del.com");
 			await store.SetPasswordAsync(usr, "test2");
 		}
+
 	}
 }

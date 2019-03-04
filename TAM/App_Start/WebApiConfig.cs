@@ -15,6 +15,7 @@ namespace Tam
         {
 
 
+
 			// Web API configuration and services
 			config.EnableCors(); 
 			config.MapHttpAttributeRoutes();
@@ -23,6 +24,7 @@ namespace Tam
 			config.Formatters.JsonFormatter.SupportedMediaTypes
 			.Add(new MediaTypeHeaderValue("text/html"));
 			
+
 
 			config.Routes.MapHttpRoute(	   
 				name: "DefaultApi",
