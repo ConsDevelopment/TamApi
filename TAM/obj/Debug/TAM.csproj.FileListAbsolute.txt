@@ -71,7 +71,6 @@ D:\developer\TAM\Tam_012719\Tam\obj\Debug\Tam.Properties.ExceptionStrings.resour
 D:\developer\TAM\Tam_012719\Tam\obj\Debug\Tam.csproj.GenerateResource.Cache
 D:\developer\TAM\Tam_012719\Tam\obj\Debug\Tam.dll
 D:\developer\TAM\Tam_012719\Tam\obj\Debug\Tam.pdb
-
 D:\developer\TAM\Tam\Tam\bin\ApplicationInsights.config
 D:\developer\TAM\Tam\Tam\bin\roslyn\csc.exe
 D:\developer\TAM\Tam\Tam\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -199,8 +198,6 @@ D:\developer\TAM\TamApi\Tam\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\developer\TAM\TamApi\Tam\bin\Microsoft.AI.Web.xml
 D:\developer\TAM\TamApi\Tam\bin\Microsoft.AI.WindowsServer.xml
 D:\developer\TAM\TamApi\Tam\bin\Microsoft.ApplicationInsights.xml
-D:\developer\TAM\TamApi\Tam\bin\Microsoft.AspNet.Identity.Core.xml
-D:\developer\TAM\TamApi\Tam\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\developer\TAM\TamApi\Tam\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\developer\TAM\TamApi\Tam\bin\NHibernate.xml
 D:\developer\TAM\TamApi\Tam\bin\System.Web.Razor.xml

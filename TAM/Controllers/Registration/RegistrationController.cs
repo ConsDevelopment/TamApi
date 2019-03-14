@@ -25,8 +25,8 @@ namespace Tam.Controllers {
 
 		// POST api/<controller>
 		//[EnableCors(origins: "*", headers: "*", methods: "*")]
-		public bool Post(UserModel registor) {
-			bool result=false;
+		public UserModel Post(UserModel registor) {
+			UserModel result = null;
 			PasswordHasher ph = new PasswordHasher();
 			var passHash = ph.HashPassword(registor.PasswordHash);
 			UserModel user = new UserModel() {
@@ -40,13 +40,37 @@ namespace Tam.Controllers {
 			var isNotExists = reg.RegisterUser(user).Result;
 
 			if (isNotExists) {
-				result = true;
+				result = user;
 			} else {
-				result = false;
+				result = user;
 			}
 
 			return result;
 		}
+		//[EnableCors(origins: "*", headers: "*", methods: "*")]
+		//public UserModel Post() {
+
+		//	UserModel result = null;
+		//	PasswordHasher ph = new PasswordHasher();
+		//	var passHash = ph.HashPassword("testing");
+		//	UserModel user = new UserModel() {
+		//		UserName = "myUserName1",
+		//		PasswordHash = passHash,
+		//		LastName = "cons",
+		//		FirstName = "con",
+		//		SecurityStamp = Guid.NewGuid().ToString()
+		//	};
+		//	Registration reg = new Registration();
+		//	var isNotExists = reg.RegisterUser(user).Result;
+
+		//	if (isNotExists) {
+		//		result = user;
+		//	} else {
+		//		result = user;
+		//	}
+
+		//	return result;
+		//}
 
 		// PUT api/<controller>/5
 		public void Put(int id, [FromBody]string value) {

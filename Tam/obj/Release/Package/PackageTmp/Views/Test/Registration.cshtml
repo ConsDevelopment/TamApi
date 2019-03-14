@@ -21,7 +21,7 @@
 			e.preventDefault();
 
 			var source = {
-				"Username": "myusername23@del.com",
+				"Username": "myusername34@del.com",
 				"PasswordHash": "test2",
 				"FirstName": "cons",
 				"LastName": "con"
@@ -36,11 +36,11 @@
 					$.ajax({
 
 						type: "POST",
-						//url: "http://localhost:63899/api/Registration",
+						url: "http://localhost:63899/api/Registration",
 						//url: "http://localhost:63899/api/User",
 						//url: "http://cons:63899/api/User",
-						url: "http://192.168.88.25:9000/api/Registration",
-						data: JSON.stringify(source),
+						//url: "http://192.168.88.25:9000/api/Registration",
+						//data: JSON.stringify(source),
 						//data: "1",
 						contentType: 'application/json; charset=utf-8',
 
@@ -48,7 +48,7 @@
 
 						success: function (data) {
 							alert("success");
-							alert(data);
+							alert(data.UserName);
 
 						},
 
