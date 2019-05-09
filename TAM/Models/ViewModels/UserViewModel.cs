@@ -10,6 +10,6 @@ namespace Tam.Models {
 		public string LoginProvider { get; set; }
 		public string ProviderKey { get; set; }
 
-		
+
 	}
 }

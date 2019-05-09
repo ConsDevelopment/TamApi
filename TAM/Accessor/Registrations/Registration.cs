@@ -6,7 +6,8 @@ using System.Web;
 using Tam.Models;
 using Tam.NHibernate;
 
-namespace Tam.Accessor.Registration {
+namespace Tam.Accessor.Registrations {
+
 	public class Registration {
 		public async Task<bool> RegisterUser(UserModel user) {
 
