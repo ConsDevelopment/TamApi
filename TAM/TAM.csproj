@@ -183,11 +183,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accessor\Registration\Registration.cs" />
+    <Compile Include="Accessor\Registrations\Registration.cs" />
     <Compile Include="App_Start\FluentConfigs.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Login\LoginController.cs" />
+    <Compile Include="Controllers\Registration\DriverRegistrationController.cs" />
     <Compile Include="Controllers\Registration\RegistrationController.cs" />
     <Compile Include="Controllers\TestControllers\TestController.cs" />
     <Compile Include="Controllers\UserModels\UserController.cs" />
@@ -195,7 +196,10 @@
     <Compile Include="Exceptions\PermissionsException.cs" />
     <Compile Include="Exceptions\RedirectException.cs" />
     <Compile Include="Models\Application\UserLogin.cs" />
-    <Compile Include="Models\UserModels\LoginModel.cs" />
+    <Compile Include="Models\Driver\DriverModel.cs" />
+    <Compile Include="Models\Enums\UserType.cs" />
+    <Compile Include="Models\ViewModels\UserViewModel.cs" />
+    <Compile Include="NHibernate\NHibernateDriverStore.cs" />
     <Compile Include="NHibernate\NHibernateUserManager.cs" />
     <Compile Include="NHibernate\NHibernateUserStore.cs" />
     <Compile Include="Properties\ExceptionStrings.Designer.cs" />

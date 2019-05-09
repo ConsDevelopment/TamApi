@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using Tam.Accessor.Registration;
+using Tam.Accessor.Registrations;
 using Tam.Models;
 
 namespace Tam.Controllers {
@@ -36,7 +36,7 @@ namespace Tam.Controllers {
 				FirstName = registor.FirstName,
 				SecurityStamp = Guid.NewGuid().ToString()
 			};
-			Registration reg = new Registration();
+			Tam.Accessor.Registrations.Registration reg = new Tam.Accessor.Registrations.Registration();
 			var isNotExists = reg.RegisterUser(user).Result;
 
 			if (isNotExists) {

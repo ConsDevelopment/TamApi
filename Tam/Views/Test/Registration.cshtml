@@ -20,11 +20,28 @@
 
 			e.preventDefault();
 
+			//var source = {
+			//	"Username": "myusername34@del.com",
+			//	"PasswordHash": "test2",
+			//	"FirstName": "cons",
+			//	"LastName": "con"
+
+			//};
 			var source = {
-				"Username": "myusername34@del.com",
-				"PasswordHash": "test2",
-				"FirstName": "cons",
-				"LastName": "con"
+				"Email" : "value.Email",
+				"FirstName" : "value.FirstName",
+				"LastName" : "value.LastName",
+				"MiddleName" : "value.MiddleName",
+				"BirthDate" : "2019-05-19",
+				"Gender" : 1,
+				"HomeAddress" : "value.HomeAddress",
+				"Town" : "value.Town",
+				"District" : "value.District",
+				"Province" : "value.Province",
+				"City" : "value.City",
+				"MobileNumber" : "value.MobileNumber",
+				"LicenseNumber" : "value.LicenseNumber",
+				"Password" : "passHash"
 
 			};
 
@@ -36,11 +53,11 @@
 					$.ajax({
 
 						type: "POST",
-						url: "http://localhost:63899/api/Registration",
+						url: "http://localhost:63899/api/DriverRegistration",
 						//url: "http://localhost:63899/api/User",
 						//url: "http://cons:63899/api/User",
-						//url: "http://192.168.88.25:9000/api/Registration",
-						//data: JSON.stringify(source),
+						//url: "http://192.168.88.25:9000/api/DriverRegistration",
+						data: JSON.stringify(source),
 						//data: "1",
 						contentType: 'application/json; charset=utf-8',
 
@@ -48,7 +65,7 @@
 
 						success: function (data) {
 							alert("success");
-							alert(data.UserName);
+							alert(data);
 
 						},
 
