@@ -31,6 +31,8 @@ namespace Tam.Models {
 		public virtual string MobileNumber { get; set; }
 		public virtual string LicenseNumber { get; set; }
 		public virtual string Password { get; set; }
+		public virtual bool? isActive { get; set; }
+		public virtual UserModel UpdatedBy { get; set; }
 
 		public class DriverModelMap : ClassMap<DriverModel> {
 			public DriverModelMap() { 
@@ -51,7 +53,8 @@ namespace Tam.Models {
 				Map(x => x.MobileNumber);
 				Map(x => x.LicenseNumber);
 				Map(x => x.Password);
-
+				Map(x => x.isActive);
+				References(x => x.UpdatedBy, "UpdatedBy").Cascade.SaveUpdate();
 			}
 		}
 	}

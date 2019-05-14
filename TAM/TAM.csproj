@@ -183,6 +183,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accessor\Emailer.cs" />
     <Compile Include="Accessor\Registrations\Registration.cs" />
     <Compile Include="App_Start\FluentConfigs.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

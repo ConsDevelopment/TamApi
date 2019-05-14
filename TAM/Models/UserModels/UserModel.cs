@@ -31,6 +31,7 @@ namespace Tam.Models {
 		public virtual IList<UserRoleModel> Roles { get; set; }
 		public virtual ICollection<UserLogin> Logins { get; set; }
 		public virtual UserTypes? UserType { get; set; }
+		public virtual UserModel CreatedBy { get; set; }
 
 		public class UserModelMap : ClassMap<UserModel> {
 			public UserModelMap() {
@@ -49,8 +50,8 @@ namespace Tam.Models {
 				Map(x => x.IsActive);
 				Map(x => x.UserType);
 				HasMany(x => x.Logins).Cascade.SaveUpdate();
-
 				HasMany(x => x.Roles).Cascade.SaveUpdate();
+				References(x => x.CreatedBy, "CreatedBy").Cascade.SaveUpdate();
 			}
 		}
 

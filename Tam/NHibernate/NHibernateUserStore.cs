@@ -88,6 +88,16 @@ namespace Tam.NHibernate {
 			}
 		}
 
+		public async Task<IList<UserModel>> GetAllAdminEmailAsync() {
+
+			using (var db = HibernateSession.GetCurrentSession()) {
+				using (var tx = db.BeginTransaction()) {
+					return db.QueryOver<UserModel>().Where(x=>x.IsAdmin==true && x.DeleteTime==null).List();
+						} 
+			}
+
+		}
+
 		public void Dispose() {
 			//TODO should this do anything?
 		}

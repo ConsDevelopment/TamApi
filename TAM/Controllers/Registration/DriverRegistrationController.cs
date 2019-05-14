@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using Tam.Accessor;
 using Tam.Models;
 using Tam.NHibernate;
 
@@ -47,6 +48,9 @@ namespace Tam.Controllers.Registration {
 			};
 			try {
 				await hds.CreateDriverAsync(driver);
+				var nhus = new NHibernateUserStore();
+				var emails = await nhus.GetAllAdminEmailAsync();
+				await Emailer.SendMessage(driver.Email + " For Activation", emails, "Registration");
 			} catch (Exception e) {
 				result = e.Message;
 			}
