@@ -64,6 +64,57 @@ namespace Tam.Utilities {
 					throw new ArgumentOutOfRangeException();
 			}
 		}
+		public static bool OptimizationEnabled() {
+			switch (GetEnv()) {
+				case Env.local_sqlite:
+					return GetAppSetting("OptimizeBundle", "False").ToBoolean();
+				case Env.local_test_sqlite:
+					return GetAppSetting("OptimizeBundle", "True").ToBoolean();
+				case Env.local_mysql:
+					return GetAppSetting("OptimizeBundle", "False").ToBoolean();
+				case Env.test_server:
+					return GetAppSetting("OptimizeBundle", "False").ToBoolean();
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+		}
+		public static bool DisableMinification() {
+			switch (GetEnv()) {
+				case Env.local_sqlite:
+					return GetAppSetting("DisableMinification", "False").ToBoolean();
+				case Env.local_test_sqlite:
+					return GetAppSetting("DisableMinification", "False").ToBoolean();
+				case Env.local_mysql:
+					return GetAppSetting("DisableMinification", "False").ToBoolean();
+				case Env.test_server:
+					return GetAppSetting("DisableMinification", "False").ToBoolean();
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+		}
+		public static ApiServer GetApiServer() {
+			ApiServer result;
+			var apiserver = GetAppSetting("ApiServer");
+			if (apiserver != null && Enum.TryParse(apiserver.ToLower(), out result)) {
+				return result;
+			}
+			return ApiServer.localhost;
+			//throw new Exception("Invalid Environment");
+		}
+		public static string GetApiServerURL() {
+			switch (GetApiServer()) {
+				case ApiServer.localhost:
+					return "http://localhost:64310";
+				case ApiServer.localnetwork:
+					return "http://192.168.88.25:29900";
+				case ApiServer.publicnetwork:
+					return "http://124.6.139.245:29900";
+				default:
+					return "http://localhost:64310";
+			}
+
+			//throw new Exception("Invalid Environment");
+		}
 		public static bool ShouldUpdateDB() {
 			var version = GetAppSetting("dbVersion", "0");
 			if (version == "0")

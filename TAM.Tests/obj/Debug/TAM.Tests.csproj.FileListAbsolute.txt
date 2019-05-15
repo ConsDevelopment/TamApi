@@ -111,6 +111,7 @@ C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Tam.Tests.pdb
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Tam.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\NHibernate.dll
+C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.Optimization.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.Http.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\log4net.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\FluentNHibernate.dll
@@ -121,16 +122,17 @@ C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.Mvc.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.Http.WebHost.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Iesi.Collections.dll
+C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\EntityFramework.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.Cors.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.Razor.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.WebPages.Razor.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.WebPages.dll
-C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Tam.pdb
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\NHibernate.xml
+C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.Optimization.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.Http.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\log4net.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\FluentNHibernate.pdb

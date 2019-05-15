@@ -9,6 +9,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using Tam.Accessor;
 using Tam.Models;
+using Tam.Models.Enums;
 using Tam.NHibernate;
 
 namespace Tam.Controllers.Registration {
@@ -44,7 +45,8 @@ namespace Tam.Controllers.Registration {
 				City = value.City,
 				MobileNumber = value.MobileNumber,
 				LicenseNumber = value.LicenseNumber,
-				Password = passHash
+				Password = passHash,
+				Status=RegistrationStatus.ForValidation
 			};
 			try {
 				await hds.CreateDriverAsync(driver);
