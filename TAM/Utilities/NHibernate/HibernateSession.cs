@@ -17,6 +17,9 @@ using Mapping = NHibernate.Mapping;
 using Tam.Utilities.NHibernate;
 using Tam.Models;
 using Tam.App_Start;
+using Tam.NHibernate;
+using Tam.Models.UserModels;
+using System.Threading.Tasks;
 
 namespace Tam.Utilities {
 	public static class NHSQL {
@@ -182,6 +185,24 @@ namespace Tam.Utilities {
 				}
 			}
 			return null;
+		}
+		public static async Task<UserModel> SignInUser(UserModel user, bool remeberMe=false) {
+
+
+			//CurrentUserSession.userSession = user.Id;
+
+			if (remeberMe) {
+
+				if (user.SecurityStamp == null) {
+					user.SecurityStamp = Guid.NewGuid().ToString();
+					NHibernateUserStore hs = new NHibernateUserStore();
+					await hs.UpdateAsync(user);
+				}
+				CurrentUserSession.userSecurityStampCookie = user.SecurityStamp;
+			} else {
+				CurrentUserSession.removeSecurityStampCookie();
+			}
+			return user;
 		}
 		public class RuntimeNames {
 			private Configuration cfg;

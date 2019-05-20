@@ -1,0 +1,73 @@
+﻿@model IList<Tam.Models.DriverModel>
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<title>Confirmation</title>
+</head>
+
+<body>
+	<table class="table table-hover">
+		<thead class="table-dark center">
+			<tr>
+				<th scope="col">Email</th>
+				<th scope="col">First Name</th>
+				<th scope="col">Last Name</th>
+				<th scope="col">Middle Name</th>
+				<th scope="col">Birth Date</th>
+				<th scope="col">License Number</th>
+				<th scope="col">Address</th>
+				<th scope="col">Mobile Number</th>
+				<th scope="col">Activation</th>
+
+			</tr>
+		</thead>
+		<tbody>
+@for (var i = 0; i < Model.Count; i++) {
+			<tr>
+				<th scope="row">@Html.HiddenFor(m => Model[i].Id)
+				@Html.DisplayFor(m => Model[i].Email)</th>
+				<td>Otto</td>
+				<td>Motto</td>
+				<td>Hindi</td>
+				<td>August 55, 2050</td>
+				<td>1234567890</td>
+				<td>Sinampaloc, Manila</td>
+				<td>09998887766</td>
+				<td>
+					<button type="button" class="btn btn-primary">Accept</button> <button type="button"
+																						  class="btn btn-danger">
+						Denied
+					</button>
+				</td>
+			</tr>
+}
+		</tbody>
+	</table>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"></script>
+</body>
+
+</html>

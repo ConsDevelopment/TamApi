@@ -93,8 +93,8 @@ namespace Tam
 
             bundles.Add(new StyleBundle("~/Content/Login/login")
                 .Include("~/Content/Login/login.css"));
-            bundles.Add(UpdateMinification(new ScriptBundle("~/scripts/user/Login").Include(
-                      "~/scripts/user/Login.js"
+            bundles.Add(UpdateMinification(new ScriptBundle("~/scripts/Logins/Login").Include(
+                      "~/scripts/Logins/Login.js"
             )));
         }
 		

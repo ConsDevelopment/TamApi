@@ -104,13 +104,13 @@ namespace Tam.Utilities {
 		public static string GetApiServerURL() {
 			switch (GetApiServer()) {
 				case ApiServer.localhost:
-					return "http://localhost:64310";
+					return "http://localhost:63899";
 				case ApiServer.localnetwork:
-					return "http://192.168.88.25:29900";
+					return "http://192.168.88.25:9000";
 				case ApiServer.publicnetwork:
-					return "http://124.6.139.245:29900";
+					return "http://124.6.139.245:9000";
 				default:
-					return "http://localhost:64310";
+					return "http://localhost:63899";
 			}
 
 			//throw new Exception("Invalid Environment");

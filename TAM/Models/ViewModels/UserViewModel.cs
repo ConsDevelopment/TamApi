@@ -9,6 +9,7 @@ namespace Tam.Models {
 		public string Password { get; set; }
 		public string LoginProvider { get; set; }
 		public string ProviderKey { get; set; }
+		public bool RememberMe { get; set; }
 
 
 	}

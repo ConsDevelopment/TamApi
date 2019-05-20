@@ -11,7 +11,9 @@ namespace Tam
 {
     public static class WebApiConfig
     {
-        public static void Register(HttpConfiguration config)
+		public static string UrlPrefix { get { return "api"; } }
+		public static string UrlPrefixRelative { get { return "~/api"; } }
+		public static void Register(HttpConfiguration config)
         {
 
 
@@ -28,7 +30,7 @@ namespace Tam
 
 			config.Routes.MapHttpRoute(	   
 				name: "DefaultApi",
-				routeTemplate: "api/{controller}/{id}",
+				routeTemplate: WebApiConfig.UrlPrefix + "/{controller}/{id}",
 				defaults: new { id = RouteParameter.Optional }
 			);
 			config.Routes.MapHttpRoute(
