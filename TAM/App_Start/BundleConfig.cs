@@ -24,7 +24,7 @@ namespace Tam
             //Main(bundles);
 
             login(bundles);
-		
+			Confirm(bundles);
 
 			BundleTable.EnableOptimizations = Config.OptimizationEnabled();
 
@@ -97,7 +97,14 @@ namespace Tam
                       "~/scripts/Logins/Login.js"
             )));
         }
-		
+		private static void Confirm(BundleCollection bundles) {
+
+			
+			bundles.Add(UpdateMinification(new ScriptBundle("~/scripts/Confirmation/Confirm").Include(
+					  "~/scripts/Confirmation/Confirm.js"
+			)));
+		}
+
 
 
 		//private static void Bootstrap(BundleCollection bundles) {

@@ -67,6 +67,14 @@ namespace Tam.NHibernate {
 			}
 		}
 
+		public async Task<UserModel> FindByStampAsync(string stamp) {
+			using (var db = HibernateSession.GetCurrentSession()) {
+				using (var tx = db.BeginTransaction()) {
+					return db.QueryOver<UserModel>().Where(x => x.SecurityStamp == stamp).SingleOrDefault();
+				}
+			}
+		}
+
 		public async Task<UserModel> FindByNamePassAsync(string userName, string password) {
 			PasswordHasher ph = new PasswordHasher();
 			

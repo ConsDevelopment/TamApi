@@ -19,7 +19,7 @@ function logIn() {
         //dataType: 'json',
 
         success: function (data) {
-        	location.href = "../Confirmation/DriverConfirmation/" + data;
+        	location.href = "../Confirmation/DriverConfirmation";
 
 
         },

@@ -14,6 +14,8 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	@Scripts.Render("~/scripts/Confirmation/Confirm")
+	@Html.Hidden("ApiServer", ViewData["ApiServer"])
 
 	<title>Confirmation</title>
 </head>
@@ -39,18 +41,16 @@
 			<tr>
 				<th scope="row">@Html.HiddenFor(m => Model[i].Id)
 				@Html.DisplayFor(m => Model[i].Email)</th>
-				<td>Otto</td>
-				<td>Motto</td>
-				<td>Hindi</td>
-				<td>August 55, 2050</td>
-				<td>1234567890</td>
-				<td>Sinampaloc, Manila</td>
-				<td>09998887766</td>
+				<td>@Html.DisplayFor(m => Model[i].FirstName)</td>
+				<td>@Html.DisplayFor(m => Model[i].LastName)</td>
+				<td>@Html.DisplayFor(m => Model[i].MiddleName)</td>
+				<td>@Html.DisplayFor(m => Model[i].BirthDate)</td>
+				<td>@Html.DisplayFor(m => Model[i].LicenseNumber)</td>
+				<td>@Html.DisplayFor(m => Model[i].HomeAddress), Manila</td>
+				<td>@Html.DisplayFor(m => Model[i].MobileNumber)</td>
 				<td>
-					<button type="button" class="btn btn-primary">Accept</button> <button type="button"
-																						  class="btn btn-danger">
-						Denied
-					</button>
+					<button type="button" class="btn btn-primary" onclick="Accept('@Model[i].Id')">Accept</button> 
+					<button type="button" class="btn btn-danger">Denied</button>
 				</td>
 			</tr>
 }

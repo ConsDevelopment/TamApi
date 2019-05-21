@@ -191,6 +191,7 @@
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\Confirmation\Confirm.js" />
     <Content Include="scripts\Logins\Login.js" />
     <Content Include="Views\Test\HtmlPage1.html" />
     <Content Include="Web.config">
