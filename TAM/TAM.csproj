@@ -210,6 +210,7 @@
     <Compile Include="Controllers\Login\LoginsController.cs" />
     <Compile Include="Controllers\Registration\ConfirmationController.cs" />
     <Compile Include="Controllers\Registration\DriverRegistrationController.cs" />
+    <Compile Include="Controllers\Registration\RegConfirmationController.cs" />
     <Compile Include="Controllers\Registration\RegistrationController.cs" />
     <Compile Include="Controllers\TestControllers\TestController.cs" />
     <Compile Include="Controllers\UserModels\UserController.cs" />
@@ -271,7 +272,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\DriverConfirmation\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\ExceptionStrings.resx" />

@@ -48,6 +48,23 @@ namespace Tam.NHibernate {
 			}
 
 		}
+		public async Task UpdateAsync(DriverModel driver) {
+			using (var db = HibernateSession.GetCurrentSession()) {
+				using (var tx = db.BeginTransaction()) {
+				    //driver = db.Get<DriverModel>(driver);
+					db.SaveOrUpdate(driver);
+					tx.Commit();
+					db.Flush();
+				}
+			}
+		}
+		public async Task<DriverModel> FindByIdAsync(long Id) {
+			using (var db = HibernateSession.GetCurrentSession()) {
+				using (var tx = db.BeginTransaction()) {
+					return db.Get<DriverModel>(Id);
+				}
+			}
+		}
 
 
 		public void Dispose() {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Tam.Models.Enums;
 
 namespace Tam.Models {
 	public class LoginModel {
@@ -11,6 +12,9 @@ namespace Tam.Models {
 		public string ProviderKey { get; set; }
 		public bool RememberMe { get; set; }
 
-
+	}
+	public class RegistrationSatusModel {
+		public long Id { get; set; }
+		public RegistrationStatus status { get; set; }
 	}
 }

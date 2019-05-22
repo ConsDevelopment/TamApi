@@ -1,7 +1,7 @@
 ﻿
 
 function logIn() {
-	alert($("#ApiServer").val());
+	
     source = {
         "UserName": $("#UserName").val(),
         "Password": $("#Password").val(),

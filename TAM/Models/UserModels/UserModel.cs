@@ -54,6 +54,7 @@ namespace Tam.Models {
 				HasMany(x => x.Roles).Cascade.SaveUpdate();
 				References(x => x.CreatedBy, "CreatedBy").Cascade.SaveUpdate();
 				References(x => x.Driver, "Driver").Cascade.SaveUpdate();
+
 			}
 		}
 

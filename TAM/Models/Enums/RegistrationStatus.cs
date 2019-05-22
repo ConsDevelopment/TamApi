@@ -8,6 +8,6 @@ namespace Tam.Models.Enums {
 		ForValidation=0,
 		Incomplete=1,
 		Accepted=2,
-		Denied=2
+		Denied=3
 	}
 }
