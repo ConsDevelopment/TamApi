@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using System.Web.Optimization;
 
 namespace Tam
 {
@@ -17,7 +18,16 @@ namespace Tam
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
-        }
-    }
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+			BundleConfig.RegisterBundles(BundleTable.Bundles);
+		}
+		protected void Application_PostAuthorizeRequest() {
+			if (IsWebApiRequest()) {
+				HttpContext.Current.SetSessionStateBehavior(SessionStateBehavior.Required);
+			}
+		}
+		private bool IsWebApiRequest() {
+			return HttpContext.Current.Request.AppRelativeCurrentExecutionFilePath.StartsWith(WebApiConfig.UrlPrefixRelative);
+		}
+	}
 }

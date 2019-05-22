@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Security.Claims;
+using Tam.Models.Enums;
 
 namespace Tam.NHibernate {
 	// Summary:
@@ -38,7 +39,34 @@ namespace Tam.NHibernate {
 			}
 		}
 
-		
+		public async Task<IList<DriverModel>> GetAllForValidationAsync() {
+
+			using (var db = HibernateSession.GetCurrentSession()) {
+				using (var tx = db.BeginTransaction()) {
+					return db.QueryOver<DriverModel>().Where(x => x.Status == RegistrationStatus.ForValidation && x.DeleteTime == null).List();
+				}
+			}
+
+		}
+		public async Task UpdateAsync(DriverModel driver) {
+			using (var db = HibernateSession.GetCurrentSession()) {
+				using (var tx = db.BeginTransaction()) {
+				    //driver = db.Get<DriverModel>(driver);
+					db.SaveOrUpdate(driver);
+					tx.Commit();
+					db.Flush();
+				}
+			}
+		}
+		public async Task<DriverModel> FindByIdAsync(long Id) {
+			using (var db = HibernateSession.GetCurrentSession()) {
+				using (var tx = db.BeginTransaction()) {
+					return db.Get<DriverModel>(Id);
+				}
+			}
+		}
+
+
 		public void Dispose() {
 			//TODO should this do anything?
 		}

@@ -218,11 +218,6 @@ D:\developer\TAM\TamApi\Tam\obj\Debug\Tam.pdb
 D:\developer\TAM\TamApi\Tam\bin\System.Web.Cors.dll
 D:\developer\TAM\TamApi\Tam\bin\System.Web.Http.Cors.dll
 D:\developer\TAM\TamApi\Tam\bin\System.Web.Http.Cors.xml
-C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.csprojResolveAssemblyReference.cache
-C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.Properties.ExceptionStrings.resources
-C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.csproj.GenerateResource.Cache
-C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.dll
-C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.pdb
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\ApplicationInsights.config
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\roslyn\csc.exe
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -239,6 +234,7 @@ C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Tam.dll.config
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Tam.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Tam.pdb
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Antlr3.Runtime.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\EntityFramework.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\EntityFramework.SqlServer.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\FluentNHibernate.dll
@@ -264,10 +260,13 @@ C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Http.Cors.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Http.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Http.WebHost.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Mvc.dll
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Optimization.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Razor.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Webpages.Deployment.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Webpages.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Webpages.Razor.dll
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\WebGrease.dll
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Antlr3.Runtime.pdb
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\EntityFramework.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\EntityFramework.SqlServer.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\FluentNHibernate.pdb
@@ -284,6 +283,7 @@ C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\NHibernate.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Net.Http.Formatting.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Http.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Http.Cors.xml
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Optimization.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Razor.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Webpages.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Webpages.Deployment.xml
@@ -292,3 +292,8 @@ C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Helpers.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Mvc.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Newtonsoft.Json.xml
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Http.WebHost.xml
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.Properties.ExceptionStrings.resources
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.csproj.GenerateResource.Cache
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.dll
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.pdb
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.csprojResolveAssemblyReference.cache
