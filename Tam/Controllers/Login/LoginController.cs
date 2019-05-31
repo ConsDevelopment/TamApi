@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using Tam.Models;
+using Tam.Models.Enums;
 using Tam.NHibernate;
 using Tam.Utilities;
 
@@ -23,7 +24,7 @@ namespace Tam.Controllers.Login {
 		}
 
 		// POST api/<controller>
-		public async Task<string> Post(LoginModel Login) {
+		public async Task<DriverProfile> Post(LoginModel Login) {
 			NHibernateUserStore store = new NHibernateUserStore();
 			try {
 				var usr = await store.FindByNamePassAsync(Login.Username, Login.Password);
@@ -32,7 +33,20 @@ namespace Tam.Controllers.Login {
 					var session = HttpContext.Current.Session;
 					session["UserId"] = usr.Id;
 					usr = await HibernateSession.SignInUser(usr, Login.RememberMe);
-					return usr.SecurityStamp;
+					var vehicles = usr.Driver.Vehicle;
+					var vehicle = (from x in vehicles.OfType<DriverVehicleModel>() where x.Status == StatusType.Active select x)
+	  .FirstOrDefault();
+					var driverProfile = new DriverProfile {
+						LastName = usr.Driver.LastName,
+						FirstName = usr.Driver.FirstName,
+						MiddleName = usr.Driver.MiddleName,
+						PlateNo = vehicle.Vehicle.PlateNumber,
+						FranchiseNo=vehicle.Vehicle.FranchiseNo,
+						Origin=vehicle.Route.Origin,
+						Destination= vehicle.Route.Origin,
+						Token=usr.SecurityStamp
+						};
+					return driverProfile;
 				} else {
 					return null;
 				}

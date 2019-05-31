@@ -49,7 +49,7 @@ namespace Tam.Models {
 
 				Map(x => x.SecurityStamp);
 				Map(x => x.IsActive);
-				Map(x => x.UserType);
+				Map(x => x.UserType).CustomType<UserTypes>();
 				HasMany(x => x.Logins).Cascade.SaveUpdate();
 				HasMany(x => x.Roles).Cascade.SaveUpdate();
 				References(x => x.CreatedBy, "CreatedBy").Cascade.SaveUpdate();

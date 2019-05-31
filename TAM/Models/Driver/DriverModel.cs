@@ -22,6 +22,7 @@ namespace Tam.Models {
 		}
 		public virtual DateTime CreateTime { get; set; }
 		public virtual DateTime? DeleteTime { get; set; }
+		public virtual DateTime UpdateTime { get; set; }
 		public virtual DateTime BirthDate { get; set; }
 		public virtual string HomeAddress { get; set; }
 		public virtual string Town { get; set; }
@@ -33,6 +34,7 @@ namespace Tam.Models {
 		public virtual string Password { get; set; }
 		public virtual RegistrationStatus? Status { get; set; }
 		public virtual UserModel UpdatedBy { get; set; }
+		public virtual ICollection<DriverVehicleModel> Vehicle { get; set; }
 
 		public class DriverModelMap : ClassMap<DriverModel> {
 			public DriverModelMap() { 
@@ -45,6 +47,7 @@ namespace Tam.Models {
 				Map(x => x.DeleteTime);
 				Map(x => x.BirthDate);
 				Map(x => x.CreateTime);
+				Map(x => x.UpdateTime);
 				Map(x => x.HomeAddress);
 				Map(x => x.Town);
 				Map(x => x.District);
@@ -55,6 +58,7 @@ namespace Tam.Models {
 				Map(x => x.Password);
 				Map(x => x.Status);
 				References(x => x.UpdatedBy, "UpdatedBy").Cascade.SaveUpdate();
+				HasMany(x => x.Vehicle).Cascade.SaveUpdate().KeyColumn("Driver");
 			}
 		}
 	}
