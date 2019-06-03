@@ -47,7 +47,6 @@ namespace Tam.Controllers.Registration {
 				UserName = driver.Email,
 				FirstName = driver.LastName,
 				PasswordHash = driver.Password,
-				Gender = driver.Gender,
 				SecurityStamp = Guid.NewGuid().ToString(),
 				Driver=driver
 			};

@@ -206,6 +206,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Admin\DriverConfirmationController.cs" />
+    <Compile Include="Controllers\Login\DriversLoginController.cs" />
     <Compile Include="Controllers\Login\LoginController.cs" />
     <Compile Include="Controllers\Login\LoginsController.cs" />
     <Compile Include="Controllers\Registration\ConfirmationController.cs" />
@@ -219,10 +220,15 @@
     <Compile Include="Exceptions\RedirectException.cs" />
     <Compile Include="Models\Application\UserLogin.cs" />
     <Compile Include="Models\Driver\DriverModel.cs" />
+    <Compile Include="Models\Driver\RouteModel.cs" />
+    <Compile Include="Models\Driver\DriverVehicleModel.cs" />
+    <Compile Include="Models\Enums\StatusType.cs" />
+    <Compile Include="Models\Enums\VehicleType.cs" />
     <Compile Include="Models\Enums\ApiServer.cs" />
     <Compile Include="Models\Enums\RegistrationStatus.cs" />
     <Compile Include="Models\Enums\UserType.cs" />
     <Compile Include="Models\UserModels\CurrentUserSession.cs" />
+    <Compile Include="Models\Vehicle\VehicleModel.cs" />
     <Compile Include="Models\ViewModels\UserViewModel.cs" />
     <Compile Include="NHibernate\NHibernateDriverStore.cs" />
     <Compile Include="NHibernate\NHibernateUserManager.cs" />

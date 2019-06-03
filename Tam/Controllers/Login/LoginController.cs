@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using Tam.Models;
+using Tam.Models.Enums;
 using Tam.NHibernate;
 using Tam.Utilities;
 
@@ -32,7 +33,8 @@ namespace Tam.Controllers.Login {
 					var session = HttpContext.Current.Session;
 					session["UserId"] = usr.Id;
 					usr = await HibernateSession.SignInUser(usr, Login.RememberMe);
-					return usr.SecurityStamp;
+					
+					return "Ok";
 				} else {
 					return null;
 				}

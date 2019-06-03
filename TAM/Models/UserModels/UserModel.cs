@@ -13,7 +13,6 @@ namespace Tam.Models {
 		public virtual string LastName { get; set; }
 		public virtual string Email { get { return UserName; } }
 		public virtual long CurrentRole { get; set; }
-		public virtual GenderType? Gender { get; set; }
 		public virtual String Name() {
 			return ((FirstName ?? "").Trim() + " " + (LastName ?? "").Trim()).Trim();
 		}
@@ -44,12 +43,11 @@ namespace Tam.Models {
 				Map(x => x.CurrentRole);
 				Map(x => x.IsAdmin);
 				Map(x => x.DeleteTime);
-				Map(x => x.Gender);
 				Map(x => x.CreateTime);
 
 				Map(x => x.SecurityStamp);
 				Map(x => x.IsActive);
-				Map(x => x.UserType);
+				Map(x => x.UserType).CustomType<UserTypes>();
 				HasMany(x => x.Logins).Cascade.SaveUpdate();
 				HasMany(x => x.Roles).Cascade.SaveUpdate();
 				References(x => x.CreatedBy, "CreatedBy").Cascade.SaveUpdate();
