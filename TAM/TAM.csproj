@@ -206,6 +206,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Admin\DriverConfirmationController.cs" />
+    <Compile Include="Controllers\Login\DriversLoginController.cs" />
     <Compile Include="Controllers\Login\LoginController.cs" />
     <Compile Include="Controllers\Login\LoginsController.cs" />
     <Compile Include="Controllers\Registration\ConfirmationController.cs" />

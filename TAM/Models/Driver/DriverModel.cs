@@ -17,7 +17,7 @@ namespace Tam.Models {
 			return ((FirstName ?? "").Trim() + " " + (LastName ?? "").Trim()).Trim();
 		}
 		public DriverModel() {
-
+			Vehicle = new List<DriverVehicleModel>();
 			CreateTime = DateTime.UtcNow;
 		}
 		public virtual DateTime CreateTime { get; set; }

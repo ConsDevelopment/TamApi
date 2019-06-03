@@ -219,3 +219,8 @@ C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Release\Tam.Properties.ExceptionSt
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Release\Tam.csproj.GenerateResource.Cache
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Release\Tam.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Release\Tam.pdb
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Antlr3.Runtime.dll
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Optimization.dll
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\WebGrease.dll
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Antlr3.Runtime.pdb
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\System.Web.Optimization.xml

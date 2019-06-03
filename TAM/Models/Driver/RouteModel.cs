@@ -28,7 +28,6 @@ namespace Tam.Models {
 				Map(x => x.UpdateTime);
 				Map(x => x.DeleteTime);
 				Map(x => x.CreateTime);
-				Map(x => x.UpdateTime);
 				References(x => x.UpdatedBy, "UpdatedBy").Cascade.SaveUpdate();
 				References(x => x.CreatedBy, "CreatedBy").Cascade.SaveUpdate();
 			}
