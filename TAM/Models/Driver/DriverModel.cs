@@ -22,8 +22,8 @@ namespace Tam.Models {
 		}
 		public virtual DateTime CreateTime { get; set; }
 		public virtual DateTime? DeleteTime { get; set; }
-		public virtual DateTime UpdateTime { get; set; }
-		public virtual DateTime BirthDate { get; set; }
+		public virtual DateTime? UpdateTime { get; set; }
+		public virtual DateTime? BirthDate { get; set; }
 		public virtual string HomeAddress { get; set; }
 		public virtual string Town { get; set; }
 		public virtual string District { get; set; }
