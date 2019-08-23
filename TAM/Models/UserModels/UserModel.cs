@@ -36,9 +36,9 @@ namespace Tam.Models {
 		public class UserModelMap : ClassMap<UserModel> {
 			public UserModelMap() {
 				Id(x => x.Id).CustomType(typeof(string)).GeneratedBy.Custom(typeof(GuidStringGenerator)).Length(36);
-				Map(x => x.UserName).Index("UserName_IDX").Length(400).UniqueKey("uniq");
-				Map(x => x.FirstName).Not.LazyLoad();
-				Map(x => x.LastName).Not.LazyLoad();
+				Map(x => x.UserName).Index("UserName_IDX").Length(60).UniqueKey("uniq");
+				Map(x => x.FirstName).Not.LazyLoad().Length(30);
+				Map(x => x.LastName).Not.LazyLoad().Length(30);
 				Map(x => x.PasswordHash);
 				Map(x => x.CurrentRole);
 				Map(x => x.IsAdmin);

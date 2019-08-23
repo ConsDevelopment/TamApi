@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Tam.Models.Enums {
 	public enum VehicleType {
-		NNotSpecified = 0,
+		NotSpecified = 0,
 		Bus=1,
 		Van=2,
 		Car=3
