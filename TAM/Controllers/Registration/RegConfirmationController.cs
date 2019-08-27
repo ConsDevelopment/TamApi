@@ -45,15 +45,17 @@ namespace Tam.Controllers.Registration {
 			var driver = nds.FindByIdAsync(value.Id).Result;
 			var usr = new UserModel {
 				UserName = driver.Email,
-				FirstName = driver.LastName,
+				FirstName = driver.FirstName,
+				LastName=driver.LastName,
 				PasswordHash = driver.Password,
 				SecurityStamp = Guid.NewGuid().ToString(),
 				Driver=driver
 			};
 			driver.Status = RegistrationStatus.Accepted;
 			driver.UpdatedBy = user;
-			await nus.CreateAsync(usr);
 			try {
+				await nus.CreateAsync(usr);
+			
 				await nds.UpdateAsync(driver);
 			} catch (Exception e) {
 				result = e.Message;
