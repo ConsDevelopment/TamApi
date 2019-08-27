@@ -30,8 +30,8 @@ namespace Tam.Controllers.Registration {
 			string result = "Ok";
 			PasswordHasher ph = new PasswordHasher();
 			var passHash = ph.HashPassword(value.Password);
-			NHibernateDriverStore hds = new NHibernateDriverStore();
-			var driver = new PassengerModel {
+			var hps = new NHibernatePassengerStore();
+			var passenger = new PassengerModel {
 				Email = value.Email,
 				FirstName = value.FirstName,
 				LastName = value.LastName,
@@ -44,11 +44,23 @@ namespace Tam.Controllers.Registration {
 				MobileNumber = value.MobileNumber,
 				Password = passHash
 			};
+			var nhus = new NHibernateUserStore();
+			var existingUser = await nhus.FindByNameAsync(passenger.Email);
 			try {
-				await hds.CreateDriverAsync(driver);
-				var nhus = new NHibernateUserStore();
-				var emails = await nhus.GetAllAdminEmailAsync();
-				await Emailer.SendMessage(driver.Email + " For Activation", emails, "Registration");
+				if (existingUser != null) {
+					existingUser.Passenger = passenger;
+					await nhus.UpdateAsync(existingUser);
+				} else {
+					var usr = new UserModel {
+						UserName = passenger.Email,
+						FirstName = passenger.FirstName,
+						LastName = passenger.LastName,
+						PasswordHash = passenger.Password,
+						SecurityStamp = Guid.NewGuid().ToString(),
+						Passenger = passenger
+					};
+					await nhus.CreateAsync(usr);
+				}				
 			} catch (Exception e) {
 				result = e.Message;
 			}

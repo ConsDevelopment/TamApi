@@ -32,6 +32,7 @@ namespace Tam.Models {
 		public virtual UserTypes? UserType { get; set; }
 		public virtual UserModel CreatedBy { get; set; }
 		public virtual DriverModel Driver { get; set; }
+		public virtual PassengerModel Passenger { get; set; }
 
 		public class UserModelMap : ClassMap<UserModel> {
 			public UserModelMap() {
@@ -52,6 +53,7 @@ namespace Tam.Models {
 				HasMany(x => x.Roles).Cascade.SaveUpdate();
 				References(x => x.CreatedBy, "CreatedBy").Cascade.SaveUpdate();
 				References(x => x.Driver, "Driver").Cascade.SaveUpdate();
+				References(x => x.Passenger, "Passenger").Cascade.SaveUpdate();
 
 			}
 		}

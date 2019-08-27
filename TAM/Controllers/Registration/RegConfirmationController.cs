@@ -43,31 +43,26 @@ namespace Tam.Controllers.Registration {
 			var nds = new NHibernateDriverStore();
 			
 			var driver = nds.FindByIdAsync(value.Id).Result;
-			var usr = new UserModel {
-				UserName = driver.Email,
-				FirstName = driver.FirstName,
-				LastName=driver.LastName,
-				PasswordHash = driver.Password,
-				SecurityStamp = Guid.NewGuid().ToString(),
-				Driver=driver
-			};
+			var existingUser =await nus.FindByNameAsync(driver.Email);
 			driver.Status = RegistrationStatus.Accepted;
 			driver.UpdatedBy = user;
-			try {
+			if (existingUser != null) {
+				existingUser.Driver = driver;
+				await nus.UpdateAsync(existingUser);
+			} else {
+				var usr = new UserModel {
+					UserName = driver.Email,
+					FirstName = driver.FirstName,
+					LastName = driver.LastName,
+					PasswordHash = driver.Password,
+					SecurityStamp = Guid.NewGuid().ToString(),
+					Driver = driver
+				};
 				await nus.CreateAsync(usr);
+			}				
+			var emails = driver.Email;
+			await Emailer.SendMessage(driver.Email + " Activated", emails, "Registration");
 			
-				await nds.UpdateAsync(driver);
-			} catch (Exception e) {
-				result = e.Message;
-			}
-			try {
-				await nds.CreateDriverAsync(driver);
-				var nhus = new NHibernateUserStore();
-				var emails = driver.Email;
-				await Emailer.SendMessage(driver.Email + " Activated", emails, "Registration");
-			} catch (Exception e) {
-				result = e.Message;
-			}
 			return result;
 		}
 
