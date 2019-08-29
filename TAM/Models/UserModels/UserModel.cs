@@ -11,7 +11,9 @@ namespace Tam.Models {
 	public class UserModel : IdentityUser {
 		public virtual string FirstName { get; set; }
 		public virtual string LastName { get; set; }
+#pragma warning disable CS0114 // 'UserModel.Email' hides inherited member 'IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>.Email'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
 		public virtual string Email { get { return UserName; } }
+#pragma warning restore CS0114 // 'UserModel.Email' hides inherited member 'IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>.Email'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
 		public virtual long CurrentRole { get; set; }
 		public virtual String Name() {
 			return ((FirstName ?? "").Trim() + " " + (LastName ?? "").Trim()).Trim();
@@ -27,8 +29,12 @@ namespace Tam.Models {
 		public virtual bool IsAdmin { get; set; }
 
 		public virtual bool IsActive { get; set; }
+#pragma warning disable CS0114 // 'UserModel.Roles' hides inherited member 'IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>.Roles'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
 		public virtual IList<UserRoleModel> Roles { get; set; }
+#pragma warning restore CS0114 // 'UserModel.Roles' hides inherited member 'IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>.Roles'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+#pragma warning disable CS0114 // 'UserModel.Logins' hides inherited member 'IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>.Logins'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
 		public virtual ICollection<UserLogin> Logins { get; set; }
+#pragma warning restore CS0114 // 'UserModel.Logins' hides inherited member 'IdentityUser<string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>.Logins'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
 		public virtual UserTypes? UserType { get; set; }
 		public virtual UserModel CreatedBy { get; set; }
 		public virtual DriverModel Driver { get; set; }

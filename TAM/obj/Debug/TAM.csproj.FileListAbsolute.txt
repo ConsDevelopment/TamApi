@@ -296,4 +296,5 @@ C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.Properties.ExceptionStri
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.csproj.GenerateResource.Cache
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.pdb
-C:\Users\Cons\Documents\GitHub\TamApi\Tam\obj\Debug\Tam.csprojResolveAssemblyReference.cache
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Tam.dll.CodeAnalysisLog.xml
+C:\Users\Cons\Documents\GitHub\TamApi\Tam\bin\Tam.dll.lastcodeanalysissucceeded

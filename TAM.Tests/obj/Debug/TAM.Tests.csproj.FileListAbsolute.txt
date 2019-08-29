@@ -151,3 +151,5 @@ C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\System.Web.WebPages.De
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\obj\Debug\Tam.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\obj\Debug\Tam.Tests.dll
 C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\obj\Debug\Tam.Tests.pdb
+C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Tam.Tests.dll.CodeAnalysisLog.xml
+C:\Users\Cons\Documents\GitHub\TamApi\Tam.Tests\bin\Debug\Tam.Tests.dll.lastcodeanalysissucceeded
