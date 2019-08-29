@@ -219,10 +219,16 @@
     <Compile Include="Crosscutting\Hooks\HookData.cs" />
     <Compile Include="Exceptions\PermissionsException.cs" />
     <Compile Include="Exceptions\RedirectException.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Models\Application\UserLogin.cs" />
+    <Compile Include="Models\Bookings\BookingModel.cs" />
+    <Compile Include="Models\Bookings\TripModel.cs" />
+    <Compile Include="Models\Bookings\ViaModel.cs" />
+    <Compile Include="Models\Bookings\TerminalModel.cs" />
     <Compile Include="Models\Driver\DriverModel.cs" />
     <Compile Include="Models\Driver\RouteModel.cs" />
     <Compile Include="Models\Driver\DriverVehicleModel.cs" />
+    <Compile Include="Models\Enums\TripStatusType.cs" />
     <Compile Include="Models\Enums\StatusType.cs" />
     <Compile Include="Models\Enums\VehicleType.cs" />
     <Compile Include="Models\Enums\ApiServer.cs" />
@@ -232,7 +238,7 @@
     <Compile Include="Models\UserModels\CurrentUserSession.cs" />
     <Compile Include="Models\Vehicle\VehicleModel.cs" />
     <Compile Include="Models\ViewModels\UserViewModel.cs" />
-    <Compile Include="NHibernate\NHibernateDriverStore - Copy.cs" />
+    <Compile Include="NHibernate\NHibernatePassengerStore.cs" />
     <Compile Include="NHibernate\NHibernateDriverStore.cs" />
     <Compile Include="NHibernate\NHibernateUserManager.cs" />
     <Compile Include="NHibernate\NHibernateUserStore.cs" />

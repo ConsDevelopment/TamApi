@@ -32,16 +32,14 @@
 				"FirstName" : "value.FirstName",
 				"LastName" : "value.LastName",
 				"MiddleName" : "value.MiddleName",
-				"BirthDate" : "2019-05-19",
+				"BirthDate": "2019-05-19",
+				"Town": "value.Town",
+				"Province": "value.Province",
+				"City": "value.City",
+				"MobileNumber": "value.MobileNumber",
 				"Gender" : 2,
 				"HomeAddress" : "value.HomeAddress",
-				"Town" : "value.Town",
-				"District" : "value.District",
-				"Province" : "value.Province",
-				"City" : "value.City",
-				"MobileNumber" : "value.MobileNumber",
-				"LicenseNumber" : "value.LicenseNumber",
-				"Password" : "passHash"
+				"Password" : "test2"
 
 			};
 
@@ -53,7 +51,7 @@
 					$.ajax({
 
 						type: "POST",
-						url: "http://localhost:63899/api/DriverRegistration",
+						url: "http://localhost:63899/api/PassengerRegistration",
 						//url: "http://localhost:63899/api/User",
 						//url: "http://cons:63899/api/User",
 						//url: "http://192.168.88.25:9000/api/DriverRegistration",

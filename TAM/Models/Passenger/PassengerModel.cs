@@ -19,6 +19,7 @@ namespace Tam.Models {
 		public virtual string MobileNumber { get; set; }
 		public virtual string Password { get; set; }
 		public virtual GenderType? Gender { get; set; }
+		public virtual StatusType? Status { get; set; }
 
 		public virtual String Name() {
 			return ((FirstName ?? "").Trim() + " " + (LastName ?? "").Trim()).Trim();
@@ -36,11 +37,12 @@ namespace Tam.Models {
 		public class PassengerModelMap : ClassMap<PassengerModel> {
 			public PassengerModelMap() { 
 				Id(x => x.Id);
-				Map(x => x.Email).Index("Email_IDX").Length(30).UniqueKey("uniq");
+				Map(x => x.Email).Index("Email_IDX").Length(50).UniqueKey("uniq");
 				Map(x => x.FirstName).Length(30);
 				Map(x => x.LastName).Length(30);
 				Map(x => x.MiddleName).Length(30);
 				Map(x => x.Gender).Length(10);
+				Map(x => x.Status).Length(20);
 				Map(x => x.DeleteTime);
 				Map(x => x.BirthDate);
 				Map(x => x.CreateTime);

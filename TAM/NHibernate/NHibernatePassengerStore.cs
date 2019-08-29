@@ -27,41 +27,14 @@ namespace Tam.NHibernate {
 
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
 
-	public class NHibernateDriverStore : IDisposable {
+	public class NHibernatePassengerStore : IDisposable {
 
-		public async Task CreateDriverAsync(DriverModel driver) {
+		public async Task CreatePassengerAsync(PassengerModel passenger) {
 			using (var db = HibernateSession.GetCurrentSession()) {
 				using (var tx = db.BeginTransaction()) {
-					db.Save(driver);
+					db.Save(passenger);
 					tx.Commit();
 					db.Flush();
-				}
-			}
-		}
-
-		public async Task<IList<DriverModel>> GetAllForValidationAsync() {
-
-			using (var db = HibernateSession.GetCurrentSession()) {
-				using (var tx = db.BeginTransaction()) {
-					return db.QueryOver<DriverModel>().Where(x => x.Status == RegistrationStatus.ForValidation && x.DeleteTime == null).List();
-				}
-			}
-
-		}
-		public async Task UpdateAsync(DriverModel driver) {
-			using (var db = HibernateSession.GetCurrentSession()) {
-				using (var tx = db.BeginTransaction()) {
-				    //driver = db.Get<DriverModel>(driver);
-					db.SaveOrUpdate(driver);
-					tx.Commit();
-					db.Flush();
-				}
-			}
-		}
-		public async Task<DriverModel> FindByIdAsync(long Id) {
-			using (var db = HibernateSession.GetCurrentSession()) {
-				using (var tx = db.BeginTransaction()) {
-					return db.Get<DriverModel>(Id);
 				}
 			}
 		}

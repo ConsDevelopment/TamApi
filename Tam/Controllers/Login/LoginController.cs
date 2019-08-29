@@ -36,9 +36,11 @@ namespace Tam.Controllers.Login {
 					
 					return "Ok";
 				} else {
-					return null;
+					return "Incorrect User or Password";
 				}
+#pragma warning disable CS0168 // The variable 'e' is declared but never used
 			} catch (Exception e) {
+#pragma warning restore CS0168 // The variable 'e' is declared but never used
 				return null;
 			}
 		}
