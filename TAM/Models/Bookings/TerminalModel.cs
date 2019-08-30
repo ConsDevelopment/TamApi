@@ -37,7 +37,7 @@ namespace Tam.Models {
 				Map(x => x.CreateTime);
 				References(x => x.UpdatedBy, "UpdatedBy").Cascade.SaveUpdate();
 				References(x => x.CreatedBy, "CreatedBy").Cascade.SaveUpdate();
-				HasMany(x => x.Vehicles).Cascade.SaveUpdate().KeyColumn("Terminal");
+				HasManyToMany(x => x.Vehicles).Cascade.All().Table("TerminalVehicle");
 			}
 		}
 	}

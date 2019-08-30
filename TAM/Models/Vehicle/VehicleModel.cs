@@ -18,7 +18,7 @@ namespace Tam.Models {
 		public virtual string Make { get; set; }
 		public virtual string Model { get; set; }
 		public virtual int YearModel { get; set; }
-		public virtual ICollection<VehicleModel> Terminals { get; set; }
+		public virtual ICollection<TerminalModel> Terminals { get; set; }
 
 		public VehicleModel() {
 
@@ -48,7 +48,7 @@ namespace Tam.Models {
 				Map(x => x.YearModel);
 				References(x => x.UpdatedBy, "UpdatedBy").Cascade.SaveUpdate();
 				References(x => x.CreatedBy, "CreatedBy").Cascade.SaveUpdate();
-				HasMany(x => x.Terminals).Cascade.SaveUpdate().KeyColumn("Vehicle");
+				HasManyToMany(x => x.Terminals).Cascade.All().Inverse().Table("TerminalVehicle");
 			}
 		}
 	}
